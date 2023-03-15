@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: core-ingress
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+    service:
+      name: core-frontend
+      port:
+        number: 80
+  # rules:
+  #   - host: script-ops.com
+  #     http:
+  #       paths:
+  #         - path: /
+  #           pathType: Prefix
+  #           backend:
+  #             service:
+  #               name: core-frontend
+  #               port:
+  #                 number: 80
